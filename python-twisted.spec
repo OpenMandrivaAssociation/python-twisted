@@ -5,7 +5,6 @@ Release: %mkrel 1
 License:        MIT
 Group:          Development/Python
 URL:            http://www.twistedmatrix.com/
-BuildRoot:      %{_tmppath}/%{name}-buildroot
 Requires: python-twisted-conch
 Requires: python-twisted-lore 
 Requires: python-twisted-mail 
