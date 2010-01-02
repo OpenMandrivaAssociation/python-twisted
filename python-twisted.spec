@@ -1,6 +1,6 @@
 Summary:        Event-based framework for internet applications
 Name:           python-twisted
-Version: 8.2.0
+Version: 9.0.0
 Release: %mkrel 1
 License:        MIT
 Group:          Development/Python
