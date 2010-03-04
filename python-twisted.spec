@@ -1,19 +1,19 @@
-Summary:        Event-based framework for internet applications
-Name:           python-twisted
-Version: 9.0.0
-Release: %mkrel 1
-License:        MIT
-Group:          Development/Python
-URL:            http://www.twistedmatrix.com/
-BuildRoot:      %{_tmppath}/%{name}-buildroot
-Requires: python-twisted-conch
-Requires: python-twisted-lore
-Requires: python-twisted-mail
-Requires: python-twisted-names
-Requires: python-twisted-news
-Requires: python-twisted-runner
-Requires: python-twisted-web
-Requires: python-twisted-words
+Summary:   Event-based framework for internet applications
+Name:      python-twisted
+Version:   10.0.0
+Release:   %mkrel 1
+License:   MIT
+Group:     Development/Python
+URL:       http://www.twistedmatrix.com/
+BuildRoot: %{_tmppath}/%{name}-buildroot
+Requires:  python-twisted-conch
+Requires:  python-twisted-lore
+Requires:  python-twisted-mail
+Requires:  python-twisted-names
+Requires:  python-twisted-news
+Requires:  python-twisted-runner
+Requires:  python-twisted-web
+Requires:  python-twisted-words
 BuildArch: noarch
 
 %description
