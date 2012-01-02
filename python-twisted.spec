@@ -1,11 +1,12 @@
 Summary:   Event-based framework for internet applications
 Name:      python-twisted
 Version:   10.1.0
-Release:   %mkrel 3
+Release:   %mkrel 4
 License:   MIT
 Group:     Development/Python
 URL:       http://www.twistedmatrix.com/
 BuildRoot: %{_tmppath}/%{name}-buildroot
+Requires:  python-twisted-core
 Requires:  python-twisted-conch 
 Requires:  python-twisted-lore 
 Requires:  python-twisted-mail 
