@@ -1,7 +1,8 @@
 Summary:   Event-based framework for internet applications
 Name:      python-twisted
 Version:   10.1.0
-Release:   %mkrel 4
+Release:   %mkrel 5
+Source0:   Twisted-%{version}.tar.bz2
 License:   MIT
 Group:     Development/Python
 URL:       http://www.twistedmatrix.com/
@@ -15,7 +16,8 @@ Requires:  python-twisted-news
 Requires:  python-twisted-runner 
 Requires:  python-twisted-web 
 Requires:  python-twisted-words 
-BuildArch: noarch
+Requires:	python-zope-interface
+BuildRequires:	python-setuptools
 
 %description
 Twisted is a framework, written in Python, for writing networked
@@ -32,16 +34,29 @@ This package is just a empty rpm with requires on all twisted sub-modules,
 in order to allows smooth upgrade and easy installation of the whole
 framework.
 
+%prep
+%setup -q -n Twisted-%{version}
+
 %build
+%__python setup.py build
+
+%install
+%__rm -rf %{buildroot}
+%__python setup.py install --root=%{buildroot}
+rm -rf %{buildroot}%{py_platsitedir}/twisted
+rm -rf %{buildroot}%{_bindir}
+
 cat >  README.mdv <<EOF
 This package is just a empty rpm with requires on all twisted sub-modules,
 in order to allows smooth upgrade and easy installation of the whole
 framework.
 EOF
 
+%clean
+%__rm -rf %{buildroot}
+
 %files
 %defattr(-,root,root)
 %doc README.mdv
-
-%clean
+%py_platsitedir/Twisted*egg-info
 
