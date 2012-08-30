@@ -1,7 +1,7 @@
 Summary:   Event-based framework for internet applications
 Name:      python-twisted
-Version:   10.1.0
-Release:   %mkrel 5
+Version:   12.1.0
+Release:   1
 Source0:   Twisted-%{version}.tar.bz2
 License:   MIT
 Group:     Development/Python
@@ -52,11 +52,6 @@ in order to allows smooth upgrade and easy installation of the whole
 framework.
 EOF
 
-%clean
-%__rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %doc README.mdv
 %py_platsitedir/Twisted*egg-info
-
