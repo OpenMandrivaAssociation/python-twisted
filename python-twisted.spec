@@ -1,13 +1,10 @@
 Summary:   Event-based framework for internet applications
 Name:      python-twisted
-Version:   12.1.0
-Release:   1
-Source0:   Twisted-%{version}.tar.bz2
+Version:   12.2.0
+Release:   %mkrel 1
 License:   MIT
 Group:     Development/Python
 URL:       http://www.twistedmatrix.com/
-BuildRoot: %{_tmppath}/%{name}-buildroot
-Requires:  python-twisted-core
 Requires:  python-twisted-conch 
 Requires:  python-twisted-lore 
 Requires:  python-twisted-mail 
@@ -16,8 +13,10 @@ Requires:  python-twisted-news
 Requires:  python-twisted-runner 
 Requires:  python-twisted-web 
 Requires:  python-twisted-words 
-Requires:	python-zope-interface
-BuildRequires:	python-setuptools
+BuildArch: noarch
+# add the pythonegg provides manually as this is a meta package, so the rpm auto-provides
+# scripts won't work here
+Provides:  pythonegg(twisted)
 
 %description
 Twisted is a framework, written in Python, for writing networked
@@ -34,18 +33,7 @@ This package is just a empty rpm with requires on all twisted sub-modules,
 in order to allows smooth upgrade and easy installation of the whole
 framework.
 
-%prep
-%setup -q -n Twisted-%{version}
-
 %build
-%__python setup.py build
-
-%install
-%__rm -rf %{buildroot}
-%__python setup.py install --root=%{buildroot}
-rm -rf %{buildroot}%{py_platsitedir}/twisted
-rm -rf %{buildroot}%{_bindir}
-
 cat >  README.mdv <<EOF
 This package is just a empty rpm with requires on all twisted sub-modules,
 in order to allows smooth upgrade and easy installation of the whole
@@ -54,4 +42,3 @@ EOF
 
 %files
 %doc README.mdv
-%py_platsitedir/Twisted*egg-info
