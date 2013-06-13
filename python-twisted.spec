@@ -1,7 +1,7 @@
 Summary:   Event-based framework for internet applications
 Name:      python-twisted
-Version:   12.2.0
-Release:   %mkrel 1
+Version:   13.0.0
+Release:   1
 License:   MIT
 Group:     Development/Python
 URL:       http://www.twistedmatrix.com/
