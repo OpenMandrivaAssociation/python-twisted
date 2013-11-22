@@ -1,22 +1,22 @@
-Summary:   Event-based framework for internet applications
-Name:      python-twisted
-Version:   13.0.0
-Release:   1
-License:   MIT
-Group:     Development/Python
-URL:       http://www.twistedmatrix.com/
-Requires:  python-twisted-conch 
-Requires:  python-twisted-lore 
-Requires:  python-twisted-mail 
-Requires:  python-twisted-names  
-Requires:  python-twisted-news 
-Requires:  python-twisted-runner 
-Requires:  python-twisted-web 
-Requires:  python-twisted-words 
-BuildArch: noarch
+Summary:	Event-based framework for internet applications
+Name:		python-twisted
+Version:	13.0.0
+Release:	1
+License:	MIT
+Group:		Development/Python
+Url:		http://www.twistedmatrix.com/
+BuildArch:	noarch
+Requires:	python-twisted-conch 
+Requires:	python-twisted-lore 
+Requires:	python-twisted-mail 
+Requires:	python-twisted-names  
+Requires:	python-twisted-news 
+Requires:	python-twisted-runner 
+Requires:	python-twisted-web 
+Requires:	python-twisted-words 
 # add the pythonegg provides manually as this is a meta package, so the rpm auto-provides
 # scripts won't work here
-Provides:  pythonegg(twisted)
+Provides:	pythonegg(twisted)
 
 %description
 Twisted is a framework, written in Python, for writing networked
