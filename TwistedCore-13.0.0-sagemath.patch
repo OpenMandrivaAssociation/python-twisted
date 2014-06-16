@@ -1,0 +1,53 @@
+diff -Naur Twisted-13.0.0/twisted/application/internet.py Twisted-13.0.0.new/twisted/application/internet.py
+--- Twisted-13.0.0/twisted/application/internet.py	2013-03-02 06:16:31.000000000 +0400
++++ Twisted-13.0.0.new/twisted/application/internet.py	2013-06-13 16:19:18.599989963 +0400
+@@ -203,7 +203,7 @@
+ }
+ 
+ import types
+-for tran in 'TCP UNIX SSL UDP UNIXDatagram Multicast'.split():
++for tran in 'TCP UNIX SSL TLS UDP UNIXDatagram Multicast'.split():
+     for side in 'Server Client'.split():
+         if tran == "Multicast" and side == "Client":
+             continue
+@@ -390,5 +390,5 @@
+ __all__ = (['TimerService', 'CooperatorService', 'MulticastServer',
+             'StreamServerEndpointService'] +
+            [tran+side
+-            for tran in 'TCP UNIX SSL UDP UNIXDatagram'.split()
++            for tran in 'TCP UNIX SSL TLS UDP UNIXDatagram'.split()
+             for side in 'Server Client'.split()])
+diff -Naur Twisted-13.0.0/twisted/internet/endpoints.py Twisted-13.0.0.new/twisted/internet/endpoints.py
+--- Twisted-13.0.0/twisted/internet/endpoints.py	2013-02-25 21:10:21.000000000 +0400
++++ Twisted-13.0.0.new/twisted/internet/endpoints.py	2013-06-13 16:20:16.793912995 +0400
+@@ -771,6 +771,22 @@
+ 
+ 
+ 
++def _parseTLS(factory, port, privateKey='server.pem', certKey=None,
++              sslmethod=None, interface='', backlog=50):
++    from gnutls.interfaces.twisted import X509Credentials
++    from gnutls.crypto import X509Certificate, X509PrivateKey
++
++    if certKey is None:
++        certKey = privateKey
++
++    cert = X509Certificate(open(certKey).read())
++    key = X509PrivateKey(open(privateKey).read())
++    cf = X509Credentials(cert, key)
++
++    return ((int(port), factory, cf),
++            {'interface': interface, 'backlog': int(backlog)})
++
++
+ @implementer(IPlugin, IStreamServerEndpointStringParser)
+ class _StandardIOParser(object):
+     """
+@@ -887,6 +903,7 @@
+ _serverParsers = {"tcp": _parseTCP,
+                   "unix": _parseUNIX,
+                   "ssl": _parseSSL,
++                  "tls": _parseTLS
+                   }
+ 
+ _OP, _STRING = range(2)
