@@ -10,8 +10,10 @@ Url:		http://twistedmatrix.com/
 Source0:	https://pypi.python.org/packages/source/T/Twisted/Twisted-%{version}.tar.bz2
 Patch0: Twisted-14.0.0-need-tirpc.patch
 Patch1:	TwistedCore-13.0.0-sagemath.patch
-BuildRequires:	python3egg(zope.interface)
 BuildRequires:	pkgconfig(python3)
+BuildRequires:	python3egg(zope.interface)
+BuildRequires:	pkgconfig(python)
+BuildRequires:	pythonegg(zope.interface)
 Requires:	pycrypto
 Requires:	python-OpenSSL
 Requires:	python-zope-interface
