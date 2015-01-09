@@ -2,8 +2,8 @@
 
 Summary:	Event-based framework for internet applications
 Name:		python-twisted
-Version:	14.0.0
-Release:	2
+Version:	14.0.2
+Release:	1
 License:	MIT
 Group:		Development/Python
 Url:		http://twistedmatrix.com/
@@ -16,7 +16,7 @@ BuildRequires:	pkgconfig(python)
 BuildRequires:	pythonegg(zope.interface)
 Requires:	pycrypto
 Requires:	python-OpenSSL
-Requires:	python-zope-interface
+Requires:	python3egg(zope.interface)
 
 %rename %{name}-core
 %rename %{name}-web
