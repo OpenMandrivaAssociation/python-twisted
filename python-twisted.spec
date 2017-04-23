@@ -2,12 +2,12 @@
 
 Summary:	Event-based framework for internet applications
 Name:		python-twisted
-Version:	14.0.2
-Release:	2
+Version:	17.1.0
+Release:	1
 License:	MIT
 Group:		Development/Python
 Url:		http://twistedmatrix.com/
-Source0:	https://pypi.python.org/packages/source/T/Twisted/Twisted-%{version}.tar.bz2
+Source0:	https://twistedmatrix.com/Releases/Twisted/%{mainver}/Twisted-%{version}.tar.bz2
 Patch0: Twisted-14.0.0-need-tirpc.patch
 Patch1:	TwistedCore-13.0.0-sagemath.patch
 BuildRequires:	pkgconfig(python3)
@@ -69,26 +69,26 @@ cd python2
 python2 setup.py build
 
 cd ../python3
-python setup3.py build
+python setup.py build
 
 %install
 cd python2
 python2 setup.py install --root=%{buildroot}
+
+cd ../python3
+python setup.py install --root=%{buildroot}
+
 # No need to install those C source files
 find %{buildroot} -name "*.c" -o -name "*.h" |xargs rm
 
-cd ../python3
-python setup3.py install --root=%{buildroot}
-
 install -d %{buildroot}%{_mandir}/man1
-install -m 644 doc/*/man/*.1 %{buildroot}%{_mandir}/man1
+install -m 644 docs/*/man/*.1 %{buildroot}%{_mandir}/man1
 
 %files
 %defattr(0644,root,root,0755)
-%doc python3/LICENSE python3/NEWS python3/README
-%dir %{py_sitedir}/twisted
-%{py_sitedir}/twisted/*
-%{py_sitedir}/*.egg-info
+%doc python3/LICENSE python3/NEWS
+%{py_platsitedir}/twisted
+%{py_platsitedir}/*.egg-info
 
 %files -n python2-twisted
 %{py2_platsitedir}/twisted
@@ -98,4 +98,4 @@ install -m 644 doc/*/man/*.1 %{buildroot}%{_mandir}/man1
 
 %files doc
 # ChangeLog.Old is here as this is big
-%doc python3/doc/
+%doc python3/docs/

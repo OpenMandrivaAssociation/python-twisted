@@ -1,18 +1,12 @@
---- Twisted-14.0.0/twisted/runner/topfiles/setup.py.omv~	2014-06-15 23:17:33.516680566 +0200
-+++ Twisted-14.0.0/twisted/runner/topfiles/setup.py	2014-06-15 23:19:04.065680857 +0200
-@@ -11,7 +11,8 @@ except ImportError:
- extensions = [
-     Extension("twisted.runner.portmap",
-               ["twisted/runner/portmap.c"],
--              condition=lambda builder: builder._check_header("rpc/rpc.h")),
-+              condition=lambda builder: builder._check_header("rpc/rpc.h"),
-+              libraries=['tirpc']),
- ]
+--- Twisted-17.1.0/src/twisted/python/_setup.py.omv~	2017-04-23 18:42:07.508400361 +0200
++++ Twisted-17.1.0/src/twisted/python/_setup.py	2017-04-23 18:42:33.012655703 +0200
+@@ -193,7 +193,8 @@ _EXTENSIONS = [
+         "twisted.runner.portmap",
+         sources=["src/twisted/runner/portmap.c"],
+         condition=lambda builder: not _PY3 and
+-                                  builder._check_header("rpc/rpc.h")),
++                                  builder._check_header("rpc/rpc.h"),
++        libraries=["tirpc"]),
+     ]
  
- if __name__ == '__main__':
-@@ -32,4 +33,5 @@ with Python and Twisted, and has an almo
- """,
-         # build stuff
-         conditionalExtensions=extensions,
-+        libs=['tirpc'],
-     )
+ 
