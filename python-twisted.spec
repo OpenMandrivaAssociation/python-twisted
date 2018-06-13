@@ -12,8 +12,10 @@ Patch1:	TwistedCore-13.0.0-sagemath.patch
 Patch2: Twisted-18.4.0-python-3.7.patch
 BuildRequires:	pkgconfig(python3)
 BuildRequires:	python3egg(zope.interface)
+BuildRequires:	python-pkg-resources
 BuildRequires:	pkgconfig(python)
 BuildRequires:	pythonegg(zope.interface)
+BuildRequires:	python2-pkg-resources
 Requires:	pycrypto
 Requires:	python-OpenSSL
 Requires:	python3egg(zope.interface)
