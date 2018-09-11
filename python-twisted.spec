@@ -2,7 +2,7 @@
 
 Summary:	Event-based framework for internet applications
 Name:		python-twisted
-Version:	18.4.0
+Version:	18.7.0
 Release:	2
 License:	MIT
 Group:		Development/Python
@@ -82,7 +82,7 @@ cd ../python3
 python setup.py install --root=%{buildroot}
 
 # No need to install those C source files
-find %{buildroot} -name "*.c" -o -name "*.h" |xargs rm
+find %{buildroot} -name "*.c" -o -name "*.h" -delete
 
 install -d %{buildroot}%{_mandir}/man1
 install -m 644 docs/*/man/*.1 %{buildroot}%{_mandir}/man1
