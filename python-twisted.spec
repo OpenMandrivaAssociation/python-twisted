@@ -14,7 +14,7 @@ BuildRequires:	python3egg(incremental) >= 16.10.1
 BuildRequires:	pkgconfig(python3)
 BuildRequires:	python3egg(zope.interface)
 BuildRequires:	python-pkg-resources
-BuildRequires:	pkgconfig(python)
+BuildRequires:	pkgconfig(python2)
 BuildRequires:	pythonegg(zope.interface)
 BuildRequires:	python2-pkg-resources
 BuildRequires:	pythonegg(incremental)
