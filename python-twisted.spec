@@ -17,7 +17,7 @@ BuildRequires:	python-pkg-resources
 BuildRequires:	pkgconfig(python)
 BuildRequires:	pythonegg(zope.interface)
 BuildRequires:	python2-pkg-resources
-BuildRequires:	python2egg(incremental)
+BuildRequires:	pythonegg(incremental)
 BuildRequires:	tiff-devel
 Requires:	pycrypto
 Requires:	python-OpenSSL
