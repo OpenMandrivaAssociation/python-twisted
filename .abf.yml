@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   Twisted-18.7.0.tar.bz2: 949c75da0426ca139a3128fecb484eeb7513087e
+sources:
+  Twisted-18.9.0.tar.bz2: 9dae1ef0978a4fad8d5143d782580553375adab5

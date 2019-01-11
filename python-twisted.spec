@@ -2,12 +2,12 @@
 
 Summary:	Event-based framework for internet applications
 Name:		python-twisted
-Version:	18.7.0
-Release:	3
+Version:	18.9.0
+Release:	1
 License:	MIT
 Group:		Development/Python
 Url:		http://twistedmatrix.com/
-Source0:	https://twistedmatrix.com/Releases/Twisted/%{mainver}/Twisted-%{version}.tar.bz2
+Source0:	https://files.pythonhosted.org/packages/source/T/Twisted/Twisted-%{version}.tar.bz2
 Patch1:	TwistedCore-13.0.0-sagemath.patch
 Patch2: Twisted-18.4.0-python-3.7.patch
 BuildRequires:	python3egg(incremental) >= 16.10.1
@@ -43,7 +43,7 @@ Group:		Development/Python
 Summary:	%{name} documentation
 
 %description  doc
-Documentation files for %name.
+Documentation files for %{name}.
 This consist mainly of the twist api for the core component.
 
 %package -n python2-twisted
@@ -74,14 +74,14 @@ cd python2
 python2 setup.py build
 
 cd ../python3
-python setup.py build
+%py_build
 
 %install
 cd python2
 python2 setup.py install --root=%{buildroot}
 
 cd ../python3
-python setup.py install --root=%{buildroot}
+%py_install
 
 # No need to install those C source files
 find %{buildroot} -name "*.c" -o -name "*.h" -delete
