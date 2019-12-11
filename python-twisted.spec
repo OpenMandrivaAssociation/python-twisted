@@ -2,12 +2,12 @@
 
 Summary:	Event-based framework for internet applications
 Name:		python-twisted
-Version:	19.7.0
+Version:	19.10.0
 Release:	1
 License:	MIT
 Group:		Development/Python
 Url:		http://twistedmatrix.com/
-Source0:	https://files.pythonhosted.org/packages/61/31/3855dcacd1d3b2e60c0b4ccc8e727b8cd497bd7087d327d81a9f0cbb580c/Twisted-19.7.0.tar.bz2
+Source0:	https://twistedmatrix.com/Releases/Twisted/%(echo %{version} |cut -d. -f1-2)/Twisted-%{version}.tar.bz2
 Patch1:	TwistedCore-13.0.0-sagemath.patch
 BuildRequires:	python3egg(incremental) >= 16.10.1
 BuildRequires:	pkgconfig(python3)
