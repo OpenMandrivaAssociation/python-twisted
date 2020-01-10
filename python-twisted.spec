@@ -62,7 +62,7 @@ models.
 
 %prep
 %setup -qn Twisted-%{version}
-%apply_patches
+%autopatch -p1
 
 mkdir python2
 mv `ls |grep -v python2` python2
