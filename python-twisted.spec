@@ -3,24 +3,24 @@
 Summary:	Event-based framework for internet applications
 Name:		python-twisted
 Version:	20.3.0
-Release:	1
+Release:	2
 License:	MIT
 Group:		Development/Python
 Url:		http://twistedmatrix.com/
-Source0:	https://files.pythonhosted.org/packages/4a/b4/4973c7ccb5be2ec0abc779b7d5f9d5f24b17b0349e23240cfc9dc3bd83cc/Twisted-20.3.0.tar.bz2
+Source0:	https://files.pythonhosted.org/packages/source/T/Twisted/Twisted-%{version}.tar.bz2
 Patch1:	TwistedCore-13.0.0-sagemath.patch
-BuildRequires:	python3egg(incremental) >= 16.10.1
+BuildRequires:	python3dist(incremental) >= 16.10.1
 BuildRequires:	pkgconfig(python3)
-BuildRequires:	python3egg(zope.interface)
+BuildRequires:	python3dist(zope.interface)
 BuildRequires:	python-pkg-resources
 BuildRequires:	pkgconfig(python2)
-BuildRequires:	pythonegg(zope.interface)
 BuildRequires:	python2-pkg-resources
-BuildRequires:	pythonegg(incremental)
+BuildRequires:	python2dist(zope.interface)
+BuildRequires:	python2dist(incremental)
 BuildRequires:	tiff-devel
 Requires:	pycrypto
 Requires:	python-OpenSSL
-Requires:	python3egg(zope.interface)
+Requires:	python3dist(zope.interface)
 
 %rename %{name}-core
 %rename %{name}-web
