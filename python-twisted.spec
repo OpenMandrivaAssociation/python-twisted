@@ -3,7 +3,7 @@
 Summary:	Event-based framework for internet applications
 Name:		python-twisted
 Version:	20.3.0
-Release:	2
+Release:	3
 License:	MIT
 Group:		Development/Python
 Url:		http://twistedmatrix.com/
@@ -18,7 +18,7 @@ BuildRequires:	python2-pkg-resources
 BuildRequires:	python2dist(zope.interface)
 BuildRequires:	python2dist(incremental)
 BuildRequires:	tiff-devel
-Requires:	pycrypto
+Requires:	python3dist(pycryptodome)
 Requires:	python-OpenSSL
 Requires:	python3dist(zope.interface)
 
