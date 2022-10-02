@@ -2,7 +2,7 @@
 
 Summary:	Event-based framework for internet applications
 Name:		python-twisted
-Version:	22.4.0
+Version:	22.8.0
 Release:	1
 License:	MIT
 Group:		Development/Python
