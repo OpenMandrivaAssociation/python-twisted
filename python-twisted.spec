@@ -6,7 +6,7 @@ Version:	22.10.0
 Release:	2
 License:	MIT
 Group:		Development/Python
-Url:		http://twistedmatrix.com/
+Url:		https://twistedmatrix.com/
 Source0:	https://files.pythonhosted.org/packages/source/T/Twisted/Twisted-%{version}.tar.gz
 BuildRequires:	python3dist(incremental) >= 16.10.1
 BuildRequires:	pkgconfig(python3)
