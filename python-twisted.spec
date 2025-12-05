@@ -12,6 +12,7 @@ BuildRequires:	python3dist(incremental) >= 16.10.1
 BuildRequires:	pkgconfig(python3)
 BuildRequires:	python3dist(zope.interface)
 BuildRequires:  python3dist(hatchling)
+BuildRequires:  python3dist(hatch-fancy-pypi-readme)
 BuildRequires:	python-pkg-resources
 BuildRequires:	tiff-devel
 Requires:	python3dist(pycryptodome)
