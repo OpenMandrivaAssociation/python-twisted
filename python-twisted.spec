@@ -63,7 +63,7 @@ install -m 644 docs/*/man/*.1 %{buildroot}%{_mandir}/man1
 %license LICENSE
 %{_bindir}/*
 %{py_sitedir}/twisted
-%{py_sitedir}/*.egg-info
+#{py_sitedir}/*.egg-info
 %{_mandir}/man1/*
 
 %files doc
