@@ -11,6 +11,7 @@ Source0:	https://files.pythonhosted.org/packages/source/t/twisted/twisted-%{vers
 BuildRequires:	python3dist(incremental) >= 16.10.1
 BuildRequires:	pkgconfig(python3)
 BuildRequires:	python3dist(zope.interface)
+BuildRequires:  python3dist(hatchling)
 BuildRequires:	python-pkg-resources
 BuildRequires:	tiff-devel
 Requires:	python3dist(pycryptodome)
