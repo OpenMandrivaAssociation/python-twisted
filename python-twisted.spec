@@ -2,12 +2,12 @@
 
 Summary:	Event-based framework for internet applications
 Name:		python-twisted
-Version:	22.10.0
-Release:	2
+Version:	25.5.0
+Release:	1
 License:	MIT
 Group:		Development/Python
 Url:		https://twistedmatrix.com/
-Source0:	https://files.pythonhosted.org/packages/source/T/Twisted/Twisted-%{version}.tar.gz
+Source0:	https://files.pythonhosted.org/packages/source/t/twisted/twisted-%{version}.tar.gz
 BuildRequires:	python3dist(incremental) >= 16.10.1
 BuildRequires:	pkgconfig(python3)
 BuildRequires:	python3dist(zope.interface)
@@ -42,7 +42,7 @@ Documentation files for %name.
 This consist mainly of the twist api for the core component.
 
 %prep
-%autosetup -p1 -n Twisted-%{version}
+%autosetup -p1 -n twisted-%{version}
 
 %build
 python setup.py build
