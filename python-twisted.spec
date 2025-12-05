@@ -45,10 +45,10 @@ This consist mainly of the twist api for the core component.
 %autosetup -p1 -n twisted-%{version}
 
 %build
-python setup.py build
+%py_build
 
 %install
-python setup.py install --root=%{buildroot}
+%py_install
 
 # No need to install those C source files
 find %{buildroot} -name "*.c" -o -name "*.h" -delete
