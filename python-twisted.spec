@@ -10,6 +10,7 @@ Url:		https://twistedmatrix.com/
 Source0:	https://files.pythonhosted.org/packages/source/t/twisted/twisted-%{version}.tar.gz
 BuildRequires:	python3dist(incremental) >= 16.10.1
 BuildRequires:	pkgconfig(python3)
+BuildRequires:  python3dist(setuptools)
 BuildRequires:	python3dist(zope.interface)
 BuildRequires:  python3dist(hatchling)
 BuildRequires:  python3dist(hatch-fancy-pypi-readme)
