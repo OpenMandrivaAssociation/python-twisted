@@ -2,16 +2,19 @@
 
 Summary:	Event-based framework for internet applications
 Name:		python-twisted
-Version:	22.10.0
-Release:	3
+Version:	25.5.0
+Release:	1
 License:	MIT
 Group:		Development/Python
 Url:		https://twistedmatrix.com/
-Source0:	https://files.pythonhosted.org/packages/source/T/Twisted/Twisted-%{version}.tar.gz
+Source0:	https://files.pythonhosted.org/packages/source/t/twisted/twisted-%{version}.tar.gz
 BuildRequires:	python3dist(incremental) >= 16.10.1
 BuildRequires:	pkgconfig(python3)
 BuildRequires:  python3dist(setuptools)
 BuildRequires:	python3dist(zope.interface)
+BuildRequires:  python3dist(hatchling)
+BuildRequires:  python3dist(hatch-fancy-pypi-readme)
+BuildRequires:  python3dist(pip)
 BuildRequires:	python-pkg-resources
 BuildRequires:	tiff-devel
 Requires:	python3dist(pycryptodome)
@@ -43,13 +46,13 @@ Documentation files for %name.
 This consist mainly of the twist api for the core component.
 
 %prep
-%autosetup -p1 -n Twisted-%{version}
+%autosetup -p1 -n twisted-%{version}
 
 %build
-python setup.py build
+%py_build
 
 %install
-python setup.py install --root=%{buildroot}
+%py_install
 
 # No need to install those C source files
 find %{buildroot} -name "*.c" -o -name "*.h" -delete
@@ -62,7 +65,8 @@ install -m 644 docs/*/man/*.1 %{buildroot}%{_mandir}/man1
 %license LICENSE
 %{_bindir}/*
 %{py_sitedir}/twisted
-%{py_sitedir}/*.egg-info
+#{py_sitedir}/*.egg-info
+%{python_sitelib}/twisted-%{version}.dist-info
 %{_mandir}/man1/*
 
 %files doc
