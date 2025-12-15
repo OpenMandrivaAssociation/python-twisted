@@ -14,6 +14,7 @@ BuildRequires:  python3dist(setuptools)
 BuildRequires:	python3dist(zope.interface)
 BuildRequires:  python3dist(hatchling)
 BuildRequires:  python3dist(hatch-fancy-pypi-readme)
+BuildRequires:  python3dist(pip)
 BuildRequires:	python-pkg-resources
 BuildRequires:	tiff-devel
 Requires:	python3dist(pycryptodome)
