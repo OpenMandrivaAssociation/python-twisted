@@ -2,7 +2,7 @@
 
 Summary:	Event-based framework for internet applications
 Name:		python-twisted
-Version:	25.5.0
+Version:	26.4.0
 Release:	1
 License:	MIT
 Group:		Development/Python
@@ -46,7 +46,7 @@ Documentation files for %name.
 This consist mainly of the twist api for the core component.
 
 %prep
-%autosetup -p1 -n twisted-%{version}
+%autosetup -p1 -n twisted-26.4.0
 
 %build
 %py_build
