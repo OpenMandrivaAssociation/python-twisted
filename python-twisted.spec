@@ -8,18 +8,18 @@ License:	MIT
 Group:		Development/Python
 Url:		https://twistedmatrix.com/
 Source0:	https://files.pythonhosted.org/packages/source/t/twisted/twisted-%{version}.tar.gz
-BuildRequires:	python3dist(incremental) >= 16.10.1
+BuildRequires:	python%{pyver}dist(incremental) >= 16.10.1
 BuildRequires:	pkgconfig(python3)
-BuildRequires:  python3dist(setuptools)
-BuildRequires:	python3dist(zope.interface)
-BuildRequires:  python3dist(hatchling)
-BuildRequires:  python3dist(hatch-fancy-pypi-readme)
-BuildRequires:  python3dist(pip)
-BuildRequires:	python-pkg-resources
+BuildRequires:	python%{pyver}dist(setuptools)
+BuildRequires:	python%{pyver}dist(zope.interface)
+BuildRequires:	python%{pyver}dist(hatchling)
+BuildRequires:	python%{pyver}dist(hatch-fancy-pypi-readme)
+BuildRequires:	python%{pyver}dist(pip)
+BuildRequires:	python%{pyver}dist(wheel)
 BuildRequires:	tiff-devel
-Requires:	python3dist(pycryptodome)
-Requires:	python-OpenSSL
-Requires:	python3dist(zope.interface)
+Requires:	python%{pyver}dist(pycryptodome)
+Requires:	python%{pyver}dist(pyopenssl)
+Requires:	python%{pyver}dist(zope.interface)
 BuildArch:	noarch
 
 %rename %{name}-core
